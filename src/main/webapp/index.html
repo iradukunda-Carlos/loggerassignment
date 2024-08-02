@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>25196</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ADD8E6; /* Light blue background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    form {
+        background-color: #ffffff; /* White form background */
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+    }
+    label {
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: inline-block;
+        color: blue; /* Changed label color to blue */
+    }
+    input[type="number"],
+    input[type="text"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        outline: none;
+        box-sizing: border-box;
+        font-size: 16px;
+        transition: border 0.3s;
+    }
+    input[type="number"]:focus,
+    input[type="text"]:focus {
+        border: 1px solid #90EE90; /* Light green border on focus */
+    }
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    button {
+        width: 48%;
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    button[type="submit"] {
+        background-color: #00008B; /* Dark blue submit button */
+    }
+    button[type="submit"]:hover {
+        background-color: #000080;
+    }
+    button[type="button"] {
+        background-color: #FF8C00; /* Dark orange clear button */
+    }
+    button[type="button"]:hover {
+        background-color: #FF7F50;
+    }
+    button.search-button {
+        background-color: #800080; /* Purple search button */
+        width: 100%;
+    }
+    button.search-button:hover {
+        background-color: #4B0082;
+    }
+</style>
+</head>
+<body>
+    <form action="submited" method="get">
+        <label for="id">Id</label><br>
+        <input type="number" id="id" name="id" required><br>
+        
+        <label for="names">Names</label><br>
+        <input type="text" id="names" name="names" required><br><br>
+        
+        <div class="button-container">
+            <button type="submit">Submit</button>
+            <button type="button" onclick="clearForm()">Clear</button>
+        </div>
+        <button type="button" class="search-button" onclick="search()">Search</button>
+    </form>
+    <script>
+        function clearForm() {
+            document.getElementById("id").value = "";
+            document.getElementById("names").value = "";
+        }
+
+        function search() {
+            const id = document.getElementById("id").value;
+
+            if (id.trim() === "") {
+                alert("Required");
+            } else {
+                alert("data found");
+            }
+        }
+    </script>
+</body>
+</html>
